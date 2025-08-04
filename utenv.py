@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ut - Python Virtual Environment Manager
+utenv - Python Virtual Environment Manager
 
 A CLI utility for managing Python virtual environments.
 Creates a 'utenv' virtual environment if none exists, or activates existing one.
@@ -127,13 +127,13 @@ def list_python_versions():
 
 def main():
     parser = argparse.ArgumentParser(
-        description="ut - Python Virtual Environment Manager",
+        description="utenv - Python Virtual Environment Manager",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  ut                    # Create or activate utenv
-  ut --python python3.11  # Create utenv with specific Python version
-  ut --list            # List available Python versions
+  utenv                    # Create or activate utenv
+  utenv --python python3.11  # Create utenv with specific Python version
+  utenv --list            # List available Python versions
         """
     )
     

@@ -1,26 +1,26 @@
 #!/bin/bash
 
-# Install ut CLI utility globally
+# Install utenv CLI utility globally
 
-echo "Installing ut CLI utility..."
+echo "Installing utenv CLI utility..."
 
 # Make sure the script is executable
-chmod +x ut.py
+chmod +x utenv.py
 
-# Create a symlink to make it available as 'ut' command
+# Create a symlink to make it available as 'utenv' command
 # Check if /usr/local/bin exists and is writable
 if [ -w /usr/local/bin ]; then
-    sudo ln -sf "$(pwd)/ut.py" /usr/local/bin/ut
-    echo "Installed to /usr/local/bin/ut"
+    sudo ln -sf "$(pwd)/utenv.py" /usr/local/bin/utenv
+    echo "Installed to /usr/local/bin/utenv"
 elif [ -w ~/.local/bin ]; then
     mkdir -p ~/.local/bin
-    ln -sf "$(pwd)/ut.py" ~/.local/bin/ut
-    echo "Installed to ~/.local/bin/ut"
+    ln -sf "$(pwd)/utenv.py" ~/.local/bin/utenv
+    echo "Installed to ~/.local/bin/utenv"
     echo "Add ~/.local/bin to your PATH if not already added"
 else
     echo "Please run this script with sudo or add ~/.local/bin to your PATH"
     exit 1
 fi
 
-echo "Installation complete! You can now use 'ut' command."
-echo "Try: ut --help" 
+echo "Installation complete! You can now use 'utenv' command."
+echo "Try: utenv --help" 

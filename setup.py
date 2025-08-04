@@ -1,25 +1,25 @@
 #!/usr/bin/env python3
 """
-Setup script for ut - Python Virtual Environment Manager
+Setup script for utenv - Python Virtual Environment Manager
 """
 
 from setuptools import setup
 
-with open("ut.py", "r") as f:
+with open("utenv.py", "r") as f:
     content = f.read()
     # Extract version from the script (we'll add one)
     version = "1.0.0"
 
 setup(
-    name="ut-venv",
+    name="utenv-venv",
     version=version,
     description="A CLI utility for managing Python virtual environments",
-    author="ut",
-    py_modules=["ut"],
-    scripts=["ut.py"],
+    author="utenv",
+    py_modules=["utenv"],
+    scripts=["utenv.py"],
     entry_points={
         "console_scripts": [
-            "ut=ut:main",
+            "utenv=utenv:main",
         ],
     },
     classifiers=[

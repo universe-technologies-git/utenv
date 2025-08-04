@@ -1,4 +1,4 @@
-# ut - Python Virtual Environment Manager
+# utenv - Python Virtual Environment Manager
 
 A simple CLI utility for managing Python virtual environments.
 
@@ -19,12 +19,12 @@ A simple CLI utility for managing Python virtual environments.
 ### Manual Install
 ```bash
 # Make executable
-chmod +x ut.py
+chmod +x utenv.py
 
 # Create symlink (choose one)
-sudo ln -sf $(pwd)/ut.py /usr/local/bin/ut
+sudo ln -sf $(pwd)/utenv.py /usr/local/bin/utenv
 # OR
-ln -sf $(pwd)/ut.py ~/.local/bin/ut
+ln -sf $(pwd)/utenv.py ~/.local/bin/utenv
 ```
 
 ## Usage
@@ -32,13 +32,13 @@ ln -sf $(pwd)/ut.py ~/.local/bin/ut
 ### Basic Usage
 ```bash
 # Create or activate utenv in current directory
-python3 ut.py
+python3 utenv.py
 
 # List available Python versions
-python3 ut.py --list
+python3 utenv.py --list
 
 # Create utenv with specific Python version
-python3 ut.py --python python3.11
+python3 utenv.py --python python3.11
 ```
 
 ### Global Installation
@@ -47,14 +47,14 @@ python3 ut.py --python python3.11
 ./install.sh
 
 # Then use anywhere
-ut
+utenv
 ```
 
 ### Examples
 
 1. **First time in a directory:**
    ```bash
-   $ python3 ut.py
+   $ python3 utenv.py
    Using Python version: python3.11
    Creating virtual environment with python3.11...
    Virtual environment created successfully!
@@ -63,14 +63,14 @@ ut
 
 2. **Subsequent runs in same directory:**
    ```bash
-   $ python3 ut.py
+   $ python3 utenv.py
    Virtual environment 'utenv' found. Activating...
    source utenv/bin/activate
    ```
 
 3. **List available Python versions:**
    ```bash
-   $ python3 ut.py --list
+   $ python3 utenv.py --list
    Available Python versions:
      python3.11: Python 3.11.5
      python3.10: Python 3.10.12
@@ -79,7 +79,7 @@ ut
 
 4. **Create with specific Python version:**
    ```bash
-   $ python3 ut.py --python python3.10
+   $ python3 utenv.py --python python3.10
    Using Python version: python3.10
    Creating virtual environment with python3.10...
    Virtual environment created successfully!

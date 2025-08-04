@@ -1,25 +1,26 @@
 #!/usr/bin/env python3
 """
 Setup script for utenv - Python Virtual Environment Manager
+
+Note: This project now uses a shell script implementation for better performance.
+The Python setup is kept for potential future complex features.
 """
 
 from setuptools import setup
 
-with open("utenv.py", "r") as f:
-    content = f.read()
-    # Extract version from the script (we'll add one)
-    version = "1.0.0"
+# For now, we're using a shell script implementation
+# This setup.py is kept for potential future Python-based features
 
 setup(
     name="utenv-venv",
-    version=version,
-    description="A CLI utility for managing Python virtual environments",
+    version="1.0.0",
+    description="A CLI utility for managing Python virtual environments (Shell script implementation)",
     author="utenv",
-    py_modules=["utenv"],
-    scripts=["utenv.py"],
+    py_modules=[],  # No Python modules for now
+    scripts=[],     # No Python scripts for now
     entry_points={
         "console_scripts": [
-            "utenv=utenv:main",
+            # No console scripts for now - using shell script
         ],
     },
     classifiers=[

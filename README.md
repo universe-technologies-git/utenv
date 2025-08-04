@@ -7,7 +7,8 @@ A simple CLI utility for managing Python virtual environments.
 - Automatically creates a `utenv` virtual environment if none exists
 - Activates existing `utenv` virtual environment
 - Supports multiple Python versions
-- Cross-platform (Unix/Linux/macOS/Windows)
+- Cross-platform (Unix/Linux/macOS)
+- Fast shell script implementation
 
 ## Installation
 
@@ -19,26 +20,33 @@ A simple CLI utility for managing Python virtual environments.
 ### Manual Install
 ```bash
 # Make executable
-chmod +x utenv.py
+chmod +x utenv.sh
 
 # Create symlink (choose one)
-sudo ln -sf $(pwd)/utenv.py /usr/local/bin/utenv
+sudo ln -sf $(pwd)/utenv.sh /usr/local/bin/utenv
 # OR
-ln -sf $(pwd)/utenv.py ~/.local/bin/utenv
+ln -sf $(pwd)/utenv.sh ~/.local/bin/utenv
 ```
+
+### Uninstall
+```bash
+./uninstall.sh
+```
+
+The uninstall script will remove the `utenv` command from your system but will not delete any existing virtual environments in your projects.
 
 ## Usage
 
 ### Basic Usage
 ```bash
 # Create or activate utenv in current directory
-python3 utenv.py
+./utenv.sh
 
 # List available Python versions
-python3 utenv.py --list
+./utenv.sh --list
 
 # Create utenv with specific Python version
-python3 utenv.py --python python3.11
+./utenv.sh --python python3.11
 ```
 
 ### Global Installation
@@ -54,23 +62,23 @@ utenv
 
 1. **First time in a directory:**
    ```bash
-   $ python3 utenv.py
+   $ ./utenv.sh
    Using Python version: python3.11
    Creating virtual environment with python3.11...
    Virtual environment created successfully!
-   Run 'source utenv/bin/activate' to activate it.
+   Activating virtual environment...
    ```
 
 2. **Subsequent runs in same directory:**
    ```bash
-   $ python3 utenv.py
+   $ ./utenv.sh
    Virtual environment 'utenv' found. Activating...
-   source utenv/bin/activate
+   Activating virtual environment...
    ```
 
 3. **List available Python versions:**
    ```bash
-   $ python3 utenv.py --list
+   $ ./utenv.sh --list
    Available Python versions:
      python3.11: Python 3.11.5
      python3.10: Python 3.10.12
@@ -79,7 +87,7 @@ utenv
 
 4. **Create with specific Python version:**
    ```bash
-   $ python3 utenv.py --python python3.10
+   $ ./utenv.sh --python python3.10
    Using Python version: python3.10
    Creating virtual environment with python3.10...
    Virtual environment created successfully!
@@ -88,7 +96,7 @@ utenv
 ## How it Works
 
 1. **No utenv exists:** Creates a new virtual environment named `utenv` using the latest stable Python version (or specified version)
-2. **utenv exists:** Prints the activation command for the existing virtual environment
+2. **utenv exists:** Activates the existing virtual environment in the current shell
 
 ## Python Version Detection
 

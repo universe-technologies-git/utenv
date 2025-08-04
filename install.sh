@@ -5,16 +5,16 @@
 echo "Installing utenv CLI utility..."
 
 # Make sure the script is executable
-chmod +x utenv.py
+chmod +x utenv.sh
 
 # Create a symlink to make it available as 'utenv' command
 # Check if /usr/local/bin exists and is writable
 if [ -w /usr/local/bin ]; then
-    sudo ln -sf "$(pwd)/utenv.py" /usr/local/bin/utenv
+    sudo ln -sf "$(pwd)/utenv.sh" /usr/local/bin/utenv
     echo "Installed to /usr/local/bin/utenv"
 elif [ -w ~/.local/bin ]; then
     mkdir -p ~/.local/bin
-    ln -sf "$(pwd)/utenv.py" ~/.local/bin/utenv
+    ln -sf "$(pwd)/utenv.sh" ~/.local/bin/utenv
     echo "Installed to ~/.local/bin/utenv"
     echo "Add ~/.local/bin to your PATH if not already added"
 else

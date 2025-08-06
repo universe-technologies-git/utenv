@@ -15,7 +15,7 @@ setup(
     name="utenv-venv",
     version="1.0.0",
     description="A CLI utility for managing Python virtual environments (Shell script implementation)",
-    author="utenv",
+    author="Michael Roust",
     py_modules=[],  # No Python modules for now
     scripts=[],     # No Python scripts for now
     entry_points={

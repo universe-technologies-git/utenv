@@ -106,10 +106,16 @@ activate_venv() {
         exit 1
     fi
     
-    print_info "Activating virtual environment..."
+    # Check if script is being sourced
+    if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+        print_error "Error: This script must be sourced, not executed."
+        print_error "Usage: source utenv.sh"
+        exit 1
+    fi
     
-    # Source the activation script and start a new shell
-    exec "$SHELL" -c "source utenv/bin/activate"
+    print_info "Activating virtual environment..."
+    source utenv/bin/activate
+    print_success "Virtual environment activated!"
 }
 
 # Function to list available Python versions

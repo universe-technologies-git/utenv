@@ -2,6 +2,20 @@
 
 A simple CLI utility for managing Python virtual environments.
 
+## Quick Start
+
+Only **2 basic commands** you need to know:
+
+```bash
+# Create or activate the directory's utenv
+source utenv
+
+# Deactivate the virtual environment
+deactivate
+```
+
+That's it! The `source utenv` command will either create a new `utenv` virtual environment (if none exists) or activate an existing one.
+
 ## Features
 
 - Automatically creates a `utenv` virtual environment if none exists
@@ -40,13 +54,10 @@ The uninstall script will remove the `utenv` command from your system but will n
 ### Basic Usage
 ```bash
 # Create or activate utenv in current directory
-./utenv.sh
+source utenv
 
-# List available Python versions
-./utenv.sh --list
-
-# Create utenv with specific Python version
-./utenv.sh --python python3.11
+# Deactivate when done
+deactivate
 ```
 
 ### Global Installation
@@ -55,47 +66,32 @@ The uninstall script will remove the `utenv` command from your system but will n
 ./install.sh
 
 # Then use anywhere
-utenv
+source utenv
 ```
 
 ### Examples
 
 1. **First time in a directory:**
    ```bash
-   $ ./utenv.sh
+   $ source utenv
    Using Python version: python3.11
    Creating virtual environment with python3.11...
    Virtual environment created successfully!
    Activating virtual environment...
+   Virtual environment activated!
    ```
 
 2. **Subsequent runs in same directory:**
    ```bash
-   $ ./utenv.sh
+   $ source utenv
    Virtual environment 'utenv' found. Activating...
    Activating virtual environment...
-   ```
-
-3. **List available Python versions:**
-   ```bash
-   $ ./utenv.sh --list
-   Available Python versions:
-     python3.11: Python 3.11.5
-     python3.10: Python 3.10.12
-     python3: Python 3.11.5
-   ```
-
-4. **Create with specific Python version:**
-   ```bash
-   $ ./utenv.sh --python python3.10
-   Using Python version: python3.10
-   Creating virtual environment with python3.10...
-   Virtual environment created successfully!
+   Virtual environment activated!
    ```
 
 ## How it Works
 
-1. **No utenv exists:** Creates a new virtual environment named `utenv` using the latest stable Python version (or specified version)
+1. **No utenv exists:** Creates a new virtual environment named `utenv` using the latest stable Python version
 2. **utenv exists:** Activates the existing virtual environment in the current shell
 
 ## Python Version Detection

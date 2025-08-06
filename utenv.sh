@@ -3,7 +3,7 @@
 # utenv - Python Virtual Environment Manager
 # A simple CLI utility for managing Python virtual environments
 
-set -e
+# set -e
 
 # Colors for output
 RED='\033[0;31m'
@@ -111,6 +111,15 @@ activate_venv() {
         print_error "Error: This script must be sourced, not executed."
         print_error "Usage: source utenv.sh"
         exit 1
+    fi
+    
+    # Deactivate any existing virtual environment (including conda)
+    if [ -n "$VIRTUAL_ENV" ]; then
+        print_info "Deactivating existing virtual environment: $VIRTUAL_ENV"
+        deactivate
+    elif [ -n "$CONDA_DEFAULT_ENV" ]; then
+        print_info "Deactivating existing conda environment: $CONDA_DEFAULT_ENV"
+        conda deactivate
     fi
     
     print_info "Activating virtual environment..."

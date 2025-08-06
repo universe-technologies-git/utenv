@@ -12,7 +12,7 @@ from setuptools import setup
 # This setup.py is kept for potential future Python-based features
 
 setup(
-    name="utenv-venv",
+    name="utenv",
     version="1.0.0",
     description="A CLI utility for managing Python virtual environments (Shell script implementation)",
     author="Michael Roust",
@@ -26,7 +26,7 @@ setup(
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
+        "License :: MIT License",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",

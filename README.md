@@ -1,4 +1,4 @@
-# utenv - Python Virtual Environment Manager
+# uenv - Python Virtual Environment Manager
 
 A simple CLI utility for managing Python virtual environments.
 
@@ -7,19 +7,19 @@ A simple CLI utility for managing Python virtual environments.
 Only **2 basic commands** you need to know:
 
 ```bash
-# Create or activate the directory's utenv
-source utenv
+# Create or activate the directory's uenv
+source uenv
 
 # Deactivate the virtual environment
 deactivate
 ```
 
-That's it! The `source utenv` command will either create a new `utenv` virtual environment (if none exists) or activate an existing one.
+That's it! The `source uenv` command will either create a new `uenv` virtual environment (if none exists) or activate an existing one.
 
 ## Features
 
-- Automatically creates a `utenv` virtual environment if none exists
-- Activates existing `utenv` virtual environment
+- Automatically creates a `uenv` virtual environment if none exists
+- Activates existing `uenv` virtual environment
 - Supports multiple Python versions
 - Cross-platform (Unix/Linux/macOS)
 - Fast shell script implementation
@@ -34,27 +34,27 @@ That's it! The `source utenv` command will either create a new `utenv` virtual e
 ### Manual Install
 ```bash
 # Make executable
-chmod +x utenv.sh
+chmod +x uenv.sh
 
 # Create symlink (choose one)
-sudo ln -sf $(pwd)/utenv.sh /usr/local/bin/utenv
+sudo ln -sf $(pwd)/uenv.sh /usr/local/bin/uenv
 # OR
-ln -sf $(pwd)/utenv.sh ~/.local/bin/utenv
+ln -sf $(pwd)/uenv.sh ~/.local/bin/uenv
 ```
 
 ### Uninstall
 ```bash
-./uninstall.sh
+./uuninstall.sh
 ```
 
-The uninstall script will remove the `utenv` command from your system but will not delete any existing virtual environments in your projects.
+The uninstall script will remove the `uenv` command from your system but will not delete any existing virtual environments in your projects.
 
 ## Usage
 
 ### Basic Usage
 ```bash
-# Create or activate utenv in current directory
-source utenv
+# Create or activate uenv in current directory
+source uenv
 
 # Deactivate when done
 deactivate
@@ -63,17 +63,17 @@ deactivate
 ### Global Installation
 ```bash
 # Install globally
-./install.sh
+./uinstall.sh
 
 # Then use anywhere
-source utenv
+source uenv
 ```
 
 ### Examples
 
 1. **First time in a directory:**
    ```bash
-   $ source utenv
+   $ source uenv
    Using Python version: python3.11
    Creating virtual environment with python3.11...
    Virtual environment created successfully!
@@ -83,16 +83,16 @@ source utenv
 
 2. **Subsequent runs in same directory:**
    ```bash
-   $ source utenv
-   Virtual environment 'utenv' found. Activating...
+   $ source uenv
+   Virtual environment 'uenv' found. Activating...
    Activating virtual environment...
    Virtual environment activated!
    ```
 
 ## How it Works
 
-1. **No utenv exists:** Creates a new virtual environment named `utenv` using the latest stable Python version
-2. **utenv exists:** Activates the existing virtual environment in the current shell
+1. **No uenv exists:** Creates a new virtual environment named `uenv` using the latest stable Python version
+2. **uenv exists:** Activates the existing virtual environment in the current shell
 
 ## Python Version Detection
 

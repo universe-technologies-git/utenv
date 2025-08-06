@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# Install utenv CLI utility globally
+# Install uenv CLI utility globally
 
-echo "Installing utenv CLI utility..."
+echo "Installing uenv CLI utility..."
 
 # Make sure the script is executable
-chmod +x utenv.sh
+chmod +x uenv.sh
 
-# Create a symlink to make it available as 'utenv' command
+# Create a symlink to make it available as 'uenv' command
 # Check if /usr/local/bin exists and is writable
 if [ -w /usr/local/bin ]; then
-    sudo ln -sf "$(pwd)/utenv.sh" /usr/local/bin/utenv
-    echo "Installed to /usr/local/bin/utenv"
+    sudo ln -sf "$(pwd)/uenv.sh" /usr/local/bin/uenv
+    echo "Installed to /usr/local/bin/uenv"
 elif [ -w ~/.local/bin ]; then
     mkdir -p ~/.local/bin
-    ln -sf "$(pwd)/utenv.sh" ~/.local/bin/utenv
-    echo "Installed to ~/.local/bin/utenv"
+    ln -sf "$(pwd)/uenv.sh" ~/.local/bin/uenv
+    echo "Installed to ~/.local/bin/uenv"
     
     # Add ~/.local/bin to PATH in shell configuration
     add_to_path() {
@@ -26,7 +26,7 @@ elif [ -w ~/.local/bin ]; then
             # Check if the export is already in the file
             if ! grep -q "export PATH.*\.local/bin" "$shell_config"; then
                 echo "" >> "$shell_config"
-                echo "# Added by utenv installer" >> "$shell_config"
+                echo "# Added by uenv installer" >> "$shell_config"
                 echo "$path_export" >> "$shell_config"
                 echo "Added ~/.local/bin to PATH in $shell_config"
             else
@@ -57,5 +57,5 @@ else
     exit 1
 fi
 
-echo "Installation complete! You can now use 'source utenv' command."
+echo "Installation complete! You can now use 'source uenv' command."
 echo "Note: You may need to restart your shell or run 'source ~/.zshrc' (or ~/.bashrc) for PATH changes to take effect." 

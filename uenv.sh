@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# utenv - Python Virtual Environment Manager
+# uenv - Python Virtual Environment Manager
 # A simple CLI utility for managing Python virtual environments
 
 # set -e
@@ -74,9 +74,9 @@ get_latest_stable_python() {
     echo "${versions[0]}"
 }
 
-# Function to check if utenv virtual environment exists
+# Function to check if uenv virtual environment exists
 venv_exists() {
-    [ -d "utenv" ] && [ -f "utenv/bin/activate" ]
+    [ -d "uenv" ] && [ -f "uenv/bin/activate" ]
 }
 
 # Function to create virtual environment
@@ -89,7 +89,7 @@ create_venv() {
         exit 1
     fi
     
-    if "$python_version" -m venv utenv; then
+    if "$python_version" -m venv uenv; then
         print_success "Virtual environment created successfully!"
         print_info "Activating virtual environment..."
         activate_venv
@@ -101,7 +101,7 @@ create_venv() {
 
 # Function to activate virtual environment
 activate_venv() {
-    if [ ! -f "utenv/bin/activate" ]; then
+    if [ ! -f "uenv/bin/activate" ]; then
         print_error "Error: Virtual environment activation script not found"
         exit 1
     fi
@@ -109,7 +109,7 @@ activate_venv() {
     # Check if script is being sourced
     if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
         print_error "Error: This script must be sourced, not executed."
-        print_error "Usage: source utenv.sh"
+        print_error "Usage: source uenv.sh"
         exit 1
     fi
     
@@ -123,7 +123,7 @@ activate_venv() {
     fi
     
     print_info "Activating virtual environment..."
-    source utenv/bin/activate
+    source uenv/bin/activate
     print_success "Virtual environment activated!"
 }
 
@@ -147,20 +147,20 @@ list_python_versions() {
 # Function to show help
 show_help() {
     cat << EOF
-utenv - Python Virtual Environment Manager
+uenv - Python Virtual Environment Manager
 
 A simple CLI utility for managing Python virtual environments.
 
 Usage:
-  utenv                    # Create or activate utenv
-  utenv --python VERSION   # Create utenv with specific Python version
-  utenv --list            # List available Python versions
-  utenv --help            # Show this help message
+  uenv                    # Create or activate uenv
+  uenv --python VERSION   # Create uenv with specific Python version
+  uenv --list            # List available Python versions
+  uenv --help            # Show this help message
 
 Examples:
-  utenv                    # Create or activate utenv
-  utenv --python python3.11  # Create utenv with specific Python version
-  utenv --list            # List available Python versions
+  uenv                    # Create or activate uenv
+  uenv --python python3.11  # Create uenv with specific Python version
+  uenv --list            # List available Python versions
 
 EOF
 }
@@ -190,9 +190,9 @@ main() {
         esac
     done
     
-    # Check if utenv already exists
+    # Check if uenv already exists
     if venv_exists; then
-        print_info "Virtual environment 'utenv' found. Activating..."
+        print_info "Virtual environment 'uenv' found. Activating..."
         activate_venv
     else
         # Determine Python version to use
